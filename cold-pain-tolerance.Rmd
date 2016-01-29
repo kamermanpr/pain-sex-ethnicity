@@ -1,0 +1,204 @@
+---
+output: 
+    md_document:
+        variant: markdown_github
+---
+
+# Random forest analysis
+
+### Peter Kamerman
+
+**First version: January 28, 2016**  
+
+**Latest version: `r format(Sys.time(), "%B %d, %Y")`**
+
+***
+
+## Session setup
+```{r session_setup, message = FALSE}
+# Load packages
+library(ggplot2)
+library(scales)
+library(grid)
+library(cowplot)
+library(svglite)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(party)
+
+# Palette
+palette = c('#000000', '#FF0000')
+
+# knitr chunk options
+opts_chunk$set(echo = TRUE,
+               warning = TRUE,
+               message = FALSE,
+               cache = TRUE,
+               fig.path = './figures/',
+               fig.width = 11.69,
+               fig.height = 8.27,
+               dev = c('png', 'svglite'),
+               tidy = TRUE, 
+               tidy.opts = list(width.cutoff = 65))
+```
+
+## Load data
+```{r import_data}
+data <- read_csv('./data/cart-25-01-2016.csv')
+```
+
+## Quick look
+```{r quick_look}
+dim(data)
+names(data)
+head(data)
+tail(data)
+```
+
+## Process data
+```{r process_data}
+# Clean data
+data <- data %>%
+    mutate(Race = factor(Race),
+           Sex = factor(Sex),
+           APBQF = `APBQ-F`,
+           APBQM = `APBQ-M`,
+           Education = factor(Education, ordered = TRUE)) %>%
+    select(-c(1,3, 9:10))
+# Complete X and Y variable dataset
+data_complete <- data[complete.cases(data), ] 
+# Length of full dataset (with NAs)
+nrow(data)
+# Length of complete cases dataset
+nrow(data_complete)
+```
+
+## Simple single tree
+```{r single_tree}
+tree <- ctree(CPT ~ ., data = data_complete)
+plot(tree)
+```
+
+## Random Forest
+```{r random_forest}
+# Set random seeds (used sampling on first run only)
+# seed_1 <- sample(1:10000, 1); seed_1
+# seed_2 <- sample(1:10000, 1); seed_2
+seed_1 <- 816
+seed_2 <- 1017
+# Data controls
+## mtry estimated as sqrt of variables 
+data.control_1 <- cforest_unbiased(ntree = 500, mtry = 3) 
+data.control_2 <- cforest_unbiased(ntree = 2000, mtry = 3) 
+# Model 1
+#########
+set.seed(seed_1)
+# ntree = 500, mtry = 3, seed = seed_1
+# Modelling 
+model_1 <- cforest(CPT ~ .,
+                    data = data_complete,
+                    controls = data.control_1) 
+model_1_varimp <- varimp(model_1, conditional = TRUE)
+
+# Model 2
+#########
+# ntree = 2000, mtry = 3, seed = seed_1
+# Modelling 
+model_2 <- cforest(CPT ~ .,
+                    data = data_complete,
+                    controls = data.control_2) 
+model_2_varimp <- varimp(model_2, conditional = TRUE)
+
+# Model 3
+#########
+# Set seed
+set.seed(seed_2)
+# ntree = 500, mtry = 3, seed = seed_2
+# Modelling 
+model_3 <- cforest(CPT ~ .,
+                    data = data_complete,
+                    controls = data.control_1) 
+model_3_varimp <- varimp(model_3, conditional = TRUE)
+
+# Model 4
+#########
+# ntree = 2000, mtry = 3, seed = seed_2
+# Modelling 
+model_4 <- cforest(CPT ~ .,
+                    data = data_complete,
+                    controls = data.control_2) 
+model_4_varimp <- varimp(model_4, conditional = TRUE)
+```
+
+## Plots
+```{r plot, eval = FALSE}
+## Generate plot dataframe
+plot_list <- list(model_1_varimp, model_2_varimp, 
+                  model_3_varimp, model_4_varimp)
+plot_list <- lapply(plot_list, function(x)
+    data.frame(Variable = names(x), Importance = x, row.names = NULL))
+plot_df <- tbl_df(do.call(cbind, plot_list))
+plot_df <- plot_df[ , c(1, 2, 4, 6, 8)]
+names(plot_df) <- c('Variable', 'Model_1', 'Model_2', 'Model_3', 'Model_4')
+plot_df <- plot_df %>%
+    gather(Model, Value, -Variable) %>%
+    mutate(Model = factor(Model)) %>%
+    group_by(Model) %>%
+    arrange(desc(Value)) %>%
+    mutate(Important = Value >= abs(min(Value)))
+## Dataframe of variable importance thresholds
+v_importance <- plot_df %>%
+    summarise(Threshold = abs(min(Value)))
+## Vector to order x axis variables
+x_order <- rev(plot_df$Variable[1:9])
+## Vector to label x variables
+x_labs <- c(APBQF = 'APBQ-Female',
+            Depression = 'Depression',
+            Education = 'Education',
+            APBQM = 'APBQ-Male',
+            PCS = 'Catastrophizing',
+            Assests = 'Household assests',
+            Anxiety = 'Anxiety',
+            Sex = 'Sex',
+            Race = 'Race')
+## Vector of facet labels
+f_labels <- c(Model_1 = 'Model 1\n(trees built: 500, seed: 816)',
+              Model_2 = 'Model 2\n(trees built: 2000, seed: 816)',
+              Model_3 = 'Model 3\n(trees built: 500, seed: 1017)',
+              Model_4 = 'Model 4\n(trees built: 2000, seed: 1017)')
+## Plot
+ggplot(data = plot_df, aes(
+                  x = Variable,
+                  y = Value,
+                  colour = Important,
+                  fill = Important)) +
+    geom_point(size = 4, 
+               shape = 21) +
+    geom_hline(data = v_importance, 
+               aes(yintercept = Threshold), 
+               linetype = 'dashed',
+               size = 0.8) +
+    facet_wrap(~ Model, 
+               labeller = labeller(Model = f_labels)) +
+    labs(y = 'Variable importance (arbitrary units)\n') +
+    scale_x_discrete(labels = x_labs,
+                     limits = x_order) +
+    scale_colour_manual(values = palette) +
+    scale_fill_manual(values = palette) +
+    theme(legend.position = 'none',
+          plot.margin = unit(c(1, 3, 1, 3), 'lines'),
+          panel.margin.x = unit(2, 'lines'),
+          axis.title = element_text(size = 18),
+          axis.title.x = element_blank(),
+          axis.text = element_text(size = 18),
+          axis.text.x = element_text(angle = 30, hjust = 1),
+          axis.line = element_line(size = 0.9),
+          strip.text = element_text(size = 14))
+```
+
+## Session information
+```{r sessionInformation}
+sessionInfo()
+```
