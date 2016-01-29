@@ -18,7 +18,6 @@ library(ggplot2)
 library(scales)
 library(grid)
 library(cowplot)
-library(svglite)
 library(readr)
 library(dplyr)
 library(tidyr)
@@ -36,7 +35,7 @@ opts_chunk$set(echo = TRUE,
                fig.path = './figures/',
                fig.width = 11.69,
                fig.height = 8.27,
-               dev = c('png', 'svglite'),
+               dev = c('png', 'pdf'),
                tidy = TRUE, 
                tidy.opts = list(width.cutoff = 65))
 ```
@@ -197,7 +196,8 @@ ggplot(data = plot_df, aes(x = Variable, y = Value, colour = Important,
     plot.margin = unit(c(1, 3, 1, 3), "lines"), panel.margin.x = unit(2, 
         "lines"), axis.title = element_text(size = 18), axis.title.x = element_blank(), 
     axis.text = element_text(size = 18), axis.text.x = element_text(angle = 30, 
-        hjust = 1), axis.line = element_line(size = 0.9), strip.text = element_text(size = 14))
+        hjust = 1), axis.line = element_line(size = 0.9), axis.ticks = element_line(size = 0.9), 
+    strip.text = element_text(size = 14))
 ```
 
 ![](./figures/plot-1.png)
@@ -219,10 +219,10 @@ sessionInfo()
     ## [8] methods   base     
     ## 
     ## other attached packages:
-    ##  [1] gdtools_0.0.6     party_1.0-25      strucchange_1.5-1
-    ##  [4] sandwich_2.3-4    zoo_1.7-12        modeltools_0.2-21
-    ##  [7] mvtnorm_1.0-3     knitr_1.12        tidyr_0.4.0      
-    ## [10] dplyr_0.4.3       readr_0.2.2       svglite_1.0.0    
+    ##  [1] gdtools_0.0.6     svglite_1.0.0     party_1.0-25     
+    ##  [4] strucchange_1.5-1 sandwich_2.3-4    zoo_1.7-12       
+    ##  [7] modeltools_0.2-21 mvtnorm_1.0-3     knitr_1.12       
+    ## [10] tidyr_0.4.0       dplyr_0.4.3       readr_0.2.2      
     ## [13] cowplot_0.6.0     scales_0.3.0      ggplot2_2.0.0    
     ## 
     ## loaded via a namespace (and not attached):
