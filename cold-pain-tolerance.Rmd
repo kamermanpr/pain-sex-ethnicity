@@ -21,7 +21,6 @@ library(ggplot2)
 library(scales)
 library(grid)
 library(cowplot)
-library(svglite)
 library(readr)
 library(dplyr)
 library(tidyr)
@@ -39,7 +38,7 @@ opts_chunk$set(echo = TRUE,
                fig.path = './figures/',
                fig.width = 11.69,
                fig.height = 8.27,
-               dev = c('png', 'svglite'),
+               dev = c('png', 'pdf'),
                tidy = TRUE, 
                tidy.opts = list(width.cutoff = 65))
 ```
@@ -195,6 +194,7 @@ ggplot(data = plot_df, aes(
           axis.text = element_text(size = 18),
           axis.text.x = element_text(angle = 30, hjust = 1),
           axis.line = element_line(size = 0.9),
+          axis.ticks = element_line(size = 0.9),
           strip.text = element_text(size = 14))
 ```
 
