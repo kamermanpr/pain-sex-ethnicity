@@ -1,5 +1,5 @@
-Random forest analysis
-======================
+Random forest analysis: Cold-pain tolerance
+===========================================
 
 ### Peter Kamerman
 
@@ -32,7 +32,7 @@ opts_chunk$set(echo = TRUE,
                warning = TRUE,
                message = FALSE,
                cache = TRUE,
-               fig.path = './figures/',
+               fig.path = './figures/cold-pain-tolerance/',
                fig.width = 11.69,
                fig.height = 8.27,
                dev = c('png', 'pdf'),
@@ -127,7 +127,7 @@ tree <- ctree(CPT ~ ., data = data_complete)
 plot(tree)
 ```
 
-![](./figures/single_tree-1.png)
+![](./figures/cold-pain-tolerance/single_tree-1.png)
  \#\# Random Forest
 
 ``` r
@@ -180,7 +180,7 @@ v_importance <- plot_df %>% summarise(Threshold = abs(min(Value)))
 x_order <- rev(plot_df$Variable[1:9])
 ## Vector to label x variables
 x_labs <- c(APBQF = "APBQ-Female", Depression = "Depression", Education = "Education", 
-    APBQM = "APBQ-Male", PCS = "Catastrophizing", Assests = "Household assests", 
+    APBQM = "APBQ-Male", PCS = "Catastrophizing", Assets = "Household assets", 
     Anxiety = "Anxiety", Sex = "Sex", Race = "Race")
 ## Vector of facet labels
 f_labels <- c(Model_1 = "Model 1\n(trees built: 500, seed: 816)", 
@@ -200,7 +200,7 @@ ggplot(data = plot_df, aes(x = Variable, y = Value, colour = Important,
     strip.text = element_text(size = 14))
 ```
 
-![](./figures/plot-1.png)
+![](./figures/cold-pain-tolerance/plot-1.png)
  \#\# Session information
 
 ``` r

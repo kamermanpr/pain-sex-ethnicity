@@ -180,12 +180,12 @@ v_importance <- plot_df %>% summarise(Threshold = abs(min(Value)))
 x_order <- rev(plot_df$Variable[1:9])
 ## Vector to label x variables
 x_labs <- c(APBQF = "APBQ-Female", Depression = "Depression", Education = "Education", 
-    APBQM = "APBQ-Male", PCS = "Catastrophizing", Assests = "Household assests", 
+    APBQM = "APBQ-Male", PCS = "Catastrophizing", Assets = "Household assets", 
     Anxiety = "Anxiety", Sex = "Sex", Race = "Race")
 ## Vector of facet labels
-f_labels <- c(Model_1 = "Model 1\n(trees built: 500, seed: 816)", 
-    Model_2 = "Model 2\n(trees built: 2000, seed: 816)", Model_3 = "Model 3\n(trees built: 500, seed: 1017)", 
-    Model_4 = "Model 4\n(trees built: 2000, seed: 1017)")
+f_labels <- c(Model_1 = "Model 1\n(trees built: 500, seed: 3811)", 
+    Model_2 = "Model 2\n(trees built: 2000, seed: 3811)", Model_3 = "Model 3\n(trees built: 500, seed: 1158)", 
+    Model_4 = "Model 4\n(trees built: 2000, seed: 1158)")
 ## Plot
 ggplot(data = plot_df, aes(x = Variable, y = Value, colour = Important, 
     fill = Important)) + geom_point(size = 4, shape = 21) + geom_hline(data = v_importance, 
