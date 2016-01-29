@@ -75,7 +75,7 @@ nrow(data_complete)
 ```
 
 ## Simple single tree
-```{r single_tree}
+```{r single_tree, fig.width = 8.27, fig.height = 11.69}
 tree <- ctree(CPT ~ ., data = data_complete)
 plot(tree)
 ```
