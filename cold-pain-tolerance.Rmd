@@ -133,7 +133,7 @@ model_4_varimp <- varimp(model_4, conditional = TRUE)
 ```
 
 ## Plots
-```{r plot, eval = FALSE}
+```{r plot}
 ## Generate plot dataframe
 plot_list <- list(model_1_varimp, model_2_varimp, 
                   model_3_varimp, model_4_varimp)
@@ -199,6 +199,6 @@ ggplot(data = plot_df, aes(
 ```
 
 ## Session information
-```{r sessionInformation}
+```{r session_information}
 sessionInfo()
 ```
