@@ -1,13 +1,18 @@
 # History file
 .Rhistory
 .Rapp.history
+
 # Example code in package build process
 *-Ex.R
+
 # RStudio files
 .Rproj.user/
+*_cache/
+
 # Studio vignettes
 vignettes/*.html
 vignettes/*.pdf
+
 # Office
 *.gddoc
 *.docx
@@ -18,9 +23,10 @@ vignettes/*.pdf
 *.gdslides
 *.pptx
 *.ppt
+
 # Other
+*.html
 *.log
 *.bak
 build/
 temp-*
-.Rproj.user
