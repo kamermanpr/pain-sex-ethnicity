@@ -45,7 +45,7 @@ opts_chunk$set(echo = TRUE,
 
 ## Load data
 ```{r import_data}
-data <- read_csv('./data/cart-25-01-2016.csv')
+data <- read_csv('./data/random-forest.csv')
 ```
 
 ## Quick look
