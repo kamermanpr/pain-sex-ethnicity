@@ -1,6 +1,9 @@
 # Random forest analysis of predictors of pain tolerance and beliefs
 
 ## Description
+The primary content of this repository includes the data, codebook, and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance, pressure-pain tolerance, and acceptance of pain behaviours in males (APBQ-M) in healthy black and white young adults of both sexes in South Africa. 
+
+The repository also includes the data and codebook used in bivariate analyses. Analysis of these data were completed using GraphPad Prism 4.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
 
 ## Bibliographic information
 [To be added when published]
@@ -26,7 +29,11 @@ Cold pain tolerance was lower in black than white students (for both sexes), and
 ### Conclusion
 Despite a different cultural and social background from US and European cohorts, we saw similar patterns of sex and race differences in tolerance to cold and pressure stimuli in an African cohort. However, traditional psychosocial predictors of pain sensitivity were not apparent in this group. 
 
-## Code book
+## Codebook
+
+### Random forest analysis
+[_**Data file:** random-forest.csv_](/data/random-forest.csv)   
+[_**Codebook file:** codebook-random-forest.csv_](/data/codebook-random-forest.csv)
 
 | Label      	| Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         	|
 |:------------	|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
