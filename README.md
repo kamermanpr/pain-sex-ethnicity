@@ -3,7 +3,7 @@
 ## Description
 The primary content of this repository includes the data, codebook, and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance, pressure-pain tolerance, and acceptance of pain behaviours in males (APBQ-M) in healthy black and white young adults of both sexes in South Africa. 
 
-The repository also includes the data and codebook used in bivariate analyses. Analysis of these data were completed using GraphPad Prism 4.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
+The repository also includes the data and codebook used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
 
 ## Bibliographic information
 [To be added when published]
