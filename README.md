@@ -1,9 +1,9 @@
 # Random forest analysis of predictors of pain tolerance and beliefs
 
 ## Description
-The primary content of this repository includes the [data](random-forest.csv), [codebook](codebook-random-forest.csv), and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance ([cold-pain-tolerance.Rmd](cold-pain-tolerance.Rmd), [cold-pain-tolerance.md](cold-pain-tolerance.md)), pressure-pain tolerance ([pressure-pain-tolerance.Rmd](pressure-pain-tolerance.Rmd), [pressure-pain-tolerance.md](pressure-pain-tolerance.md)), and acceptance of pain behaviours in males ([apbq-male.Rmd](apbq-male.Rmd), [apbq-male.md](apbq-male.md)) in healthy black and white young adults of both sexes in South Africa. 
+The primary content of this repository includes the [data](/data/random-forest.csv), [codebook](/data/codebook-random-forest.csv), and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance ([cold-pain-tolerance.Rmd](cold-pain-tolerance.Rmd), [cold-pain-tolerance.md](cold-pain-tolerance.md)), pressure-pain tolerance ([pressure-pain-tolerance.Rmd](pressure-pain-tolerance.Rmd), [pressure-pain-tolerance.md](pressure-pain-tolerance.md)), and acceptance of pain behaviours in males ([apbq-male.Rmd](apbq-male.Rmd), [apbq-male.md](apbq-male.md)) in healthy black and white young adults of both sexes in South Africa. 
 
-The repository also includes the [data](bivariate-data.csv) and [codebook](codebook-bivariate-data.csv) used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
+The repository also includes the [data](/data/bivariate-data.csv) and [codebook](/data/codebook-bivariate-data.csv) used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
 
 ## Bibliographic information
 [To be added when published]
