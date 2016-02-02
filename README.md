@@ -1,9 +1,9 @@
 # Random forest analysis of predictors of pain tolerance and beliefs
 
 ## Description
-The primary content of this repository includes the [data](/data/random-forest.csv), [codebook](/data/codebook-random-forest.csv), and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance ([cold-pain-tolerance.Rmd](cold-pain-tolerance.Rmd), [cold-pain-tolerance.md](cold-pain-tolerance.md)), pressure-pain tolerance ([pressure-pain-tolerance.Rmd](pressure-pain-tolerance.Rmd), [pressure-pain-tolerance.md](pressure-pain-tolerance.md)), and acceptance of pain behaviours in males ([apbq-male.Rmd](apbq-male.Rmd), [apbq-male.md](apbq-male.md)) in healthy black and white young adults of both sexes in South Africa. 
+The primary content of this repository includes the [data](/data/random-forest.csv), [codebook](/data/codebook-random-forest.csv), and analysis scripts (with associated markdown outputs and plots) for random forest analyses of predictors of cold-pain tolerance ([cold-pain-tolerance.Rmd](cold-pain-tolerance.Rmd), [cold-pain-tolerance.md](cold-pain-tolerance.md)), pressure-pain tolerance ([pressure-pain-tolerance.Rmd](pressure-pain-tolerance.Rmd), [pressure-pain-tolerance.md](pressure-pain-tolerance.md)), and acceptance of pain behaviours in males ([apbq-male.Rmd](apbq-male.Rmd), [apbq-male.md](apbq-male.md)) in healthy black and white young adults of both sexes in South Africa. Only complete cases were used in the random forest analysis (pain tolerances: 156/212 participants; ABPQ-M: 167/212 participants). 
 
-The repository also includes the [data](/data/bivariate-data.csv) and [codebook](/data/codebook-bivariate-data.csv) used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been posted (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
+The repository also includes the [data](/data/bivariate-data.csv) and [codebook](/data/codebook-bivariate-data.csv) used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been uploaded to the repository (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
 
 ## Bibliographic information
 [To be added when published]
@@ -50,3 +50,15 @@ Despite a different cultural and social background from US and European cohorts,
 | Education  	| Highest level of education completed by a parent or guardian [0: none, 1: primary school (grades 1 - 7), 2:,secondary school (grades 8 - 12), 3: tertiary education (post-secondary school)].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  	|
 | Assets     	| Average number of household assets owned by parents or guardians (five assets were assessed: refrigerator, television, car, microwave oven, and washing machine; 0: not owned, 1: owned).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     	|
 
+### Bivariate analyses
+**Data file:** [_bivariate-data.csv_](/data/bivariate-data.csv)   
+**Codebook file:** [_codebook-bivariate-data.csv_](/data/codebook-bivariate-data.csv)  
+
+TABLE
+
+**Note:**
+The dataset does not contain any calculated scores. To calculate:
+1. Socio-economic assest score:
+2. Hopkins Symptom Checklist 25 - anxiety subscale score:  
+3. Hopkins Symptom Checklist 25 - depression subscale score: 
+4. Appropriate Pain Behaviours Questionnaire score: 
