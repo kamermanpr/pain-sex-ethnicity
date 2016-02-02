@@ -57,8 +57,8 @@ Despite a different cultural and social background from US and European cohorts,
 TABLE
 
 **Note:**
-The dataset does not contain any calculated scores. To calculate:
-1. Socio-economic assest score:
-2. Hopkins Symptom Checklist 25 - anxiety subscale score:  
-3. Hopkins Symptom Checklist 25 - depression subscale score: 
-4. Appropriate Pain Behaviours Questionnaire score: 
+The dataset does not contain any calculated scores. To calculate:  
+1. Socio-economic assest score:  
+2. Hopkins Symptom Checklist 25 - anxiety subscale score:    
+3. Hopkins Symptom Checklist 25 - depression subscale score:   
+4. Appropriate Pain Behaviours Questionnaire score:   
