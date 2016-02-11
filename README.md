@@ -15,19 +15,19 @@ The repository also includes the [data](/data/bivariate-data.csv) and [codebook]
 
 ## Overview of the study
 ### Background
-Sex and race influence pain sensitivity and pain beliefs. However, studies on relationships between sex, race and pain largely have emanated from the US and Europe. 
+Sex and race influence pain sensitivity and pain beliefs.  However, studies on relationships between sex, race and pain largely have emanated from the US and Europe. 
 
 ### Objectives
-To determine effects of sex and race on pain sensitivity and beliefs in a black African population we compared cold and pressure pain tolerance in male and female black and white South Africans. We also assessed whether psychosocial factors (including pain beliefs) predicted sex and race differences in pain sensitivity and beliefs. 
+To determine effects of sex and race on pain sensitivity and beliefs in a black African population we compared cold and pressure pain tolerance in male and female black and white South Africans. We also assessed whether psychosocial factors (including pain beliefs) predicted sex and race differences in pain sensitivity and beliefs.
 
-### Methods
-We recruited 102 black (61 female, 41 male) and 104 white (55 female, 49 male) students. Participants underwent a cold-pressor test (hand submersion in ice-water) and pressure algometry (pressure applied to nail-bed of index finger) to determine tolerance to noxious thermal and mechanical stimuli. Socioeconomic status, catastrophizing (Pain Catastrophizing Scale), depression and anxiety (25-item Hopkins Symptom Checklist), and pain beliefs (Appropriate Pain Beliefs Questionnaire) were assessed as predictors of sex and race differences in pain tolerance. 
+### Methods 
+We recruited 106 black (62 female, 44 male) and 106 white (55 female, 51 male) students. Participants underwent a cold-pressor test and pressure algometry to determine tolerance to noxious thermal and mechanical stimuli. Socioeconomic status, pain catastrophizing, depression, anxiety and pain beliefs were assessed as predictors of differences in pain tolerance. 
 
 ### Results
-Cold pain tolerance was lower in black than white students (for both sexes), and pressure pain tolerance was lower in female than male students (for both races). Pain intensity at tolerance was similar for all groups in both tests. Men were less accepting of men expressing pain than were women, with black males being the least accepting. Multivariate analysis didn’t identify any psychosocial factors as predictors of pain tolerance independently of sex and race. 
+Cold pain tolerance was lower in black than white students (for both sexes), and pressure pain tolerance was lower in female than male students (for both races). Pain intensity at tolerance was similar for all groups in both tests. Men were less accepting of men expressing pain than were women, with black males being the least accepting. Regression tree analysis identified that being black, and particularly being a black female predicted lower cold pain tolerance. Anxiety and ownership of assets (as a measure of socioeconomic status) were identified as additional variables of interest for predicting cold pain tolerance on random forest analysis but the associations were borderline. Both regression tree and random forest analysis identified female sex as the only significant predictor of pressure-pain tolerance, with females having lower pressure-pain tolerance than men. Regression tree analysis identified sex and race as important predictors of APBQ-M score, such that being female predicted greater APBQ-M scores, and amongst males, being black predicted significantly lower APBQ-M scores than did being white. Random forest also identified depression and ownership of assets as variables of interest.
 
-### Conclusion
-Despite a different cultural and social background from US and European cohorts, we saw similar patterns of sex and race differences in tolerance to cold and pressure stimuli in an African cohort. However, traditional psychosocial predictors of pain sensitivity were not apparent in this group. 
+### Conclusions
+Despite a different cultural and social background from US and European cohorts, we saw similar patterns of sex and race differences in tolerance to cold and pressure stimuli in an African cohort. Traditional psychosocial predictors of pain sensitivity were identified as being of interest but were not strongly associated. 
 
 ## Codebook
 
