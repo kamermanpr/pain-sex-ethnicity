@@ -11,14 +11,14 @@ first_language_other,"If first language was not English, what was it?"
 education,Years of formal education (years)
 ses_parents_education,"Highest education level achieved by parent(s)/guardian(s) (0: none, 1: primary school - grades 1-7, 2: secondary school - grades 8-12, 3: tertiary education)"
 ses_parents_employment,"Parent(s)/guardian(s) current employment status (0: unemployed, 1: pensioner, 2: employed)"
-ses_housing_type,
-ses_toilet,
-ses_bedrooms,
-ses_refrigerator,
-ses_television,
-ses_car,
-ses_washing_machine,
-se_microwave_oven,
+ses_housing_type,"Type of primary residence (0: none, 1: shack, 2: hostel, 3: room/garage, 4: flat/cottage, 5: home shared with other families, 6: home not shared with other families)"
+ses_toilet,"Type of toilet facilities at primary residence (0: none, 1: pit/bucket, 2: flush toilet - outside, 3: flush toilet - inside)"
+ses_bedrooms,"Number of bedrooms at primary residence (0: 0, 1: 1, 2:  2, 3: 3, 4: 4 or more)"
+ses_refrigerator,"Do you have a refrigirator at your primary residence (0: no, 1: yes)"
+ses_television,"Do you have a television at your primary residence (0: no, 1: yes)"
+ses_car,"Do you/your parents/guardians own a car (0: no, 1: yes)"
+ses_washing_machine,"Do you have a washing machine at your primary residence (0: no, 1: yes)"
+se_microwave_oven,"Do you have a microwave oven at your primary residence (0: no, 1: yes)"
 cpt_time,
 cpt_vas,
 ppt_kpa,
