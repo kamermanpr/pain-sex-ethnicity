@@ -77,9 +77,9 @@ Despite a different cultural and social background from US and European cohorts,
 |ses_washing_machine                           |Do you have a washing machine at your primary residence (0: no, 1: yes)                                                                                                                                                   |
 |se_microwave_oven                             |Do you have a microwave oven at your primary residence (0: no, 1: yes)                                                                                                                                                    |
 |cpt_time                                      |Cold-pain tolerance: Time (in seconds) participants could retain their dominant hand in iced water (5oC). For safety, a maximum duration of 300s hand immersion was used                                                  |
-|cpt_vas                                       |Rating of the intensity of pain when cold-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain every experienced)                       |
+|cpt_vas                                       |Rating of the intensity of pain when cold-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain imaginable)                       |
 |ppt_kpa                                       |Pressure-pain tolerance: Pressure (in kPa) applied to the nail bed of the index finger using a pressure algometer with a 10mm^2 probe (Algometer, Somedic AB, Sweden). For safety, a maximum pressure of 1500kPa was used |
-|ppt_vas                                       |Rating of the intensity of pain when pressure-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain every experienced)                   |
+|ppt_vas                                       |Rating of the intensity of pain when pressure-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain imaginable)                   |
 |hopkins_1_anx_scared                          |Suddenly scared for no reason (1: not at all, 2: a little, 3: quite a bit, 4: extremely)                                                                                                                                  |
 |hopkins_2_anx_fearful                         |Feeling fearful (1: not at all, 2: a little, 3: quite a bit, 4: extremely)                                                                                                                                                |
 |hopkins_3_anx_faintness                       |Faint, dizziness or weakness(1: not at all, 2: a little, 3: quite a bit, 4: extremely)                                                                                                                                    |
@@ -150,6 +150,17 @@ Despite a different cultural and social background from US and European cohorts,
 **Note:**
 The dataset does not contain any calculated scores. To calculate:  
 1. Socio-economic assest score:  
-2. Hopkins Symptom Checklist 25 - anxiety subscale score:    
-3. Hopkins Symptom Checklist 25 - depression subscale score:   
-4. Appropriate Pain Behaviours Questionnaire score:   
+    - Based on ownership of culturally relevant assets     (refrigerator, televison, car, washing machine, microwave oven). Because the cohort consisted of full-time students we used parental/guardian ownership of material household items as proxies for participants’ asset ownership. The score was calculated by summing the number of assests 'owned', and dividing by the number of asset questions correctly completed.  
+
+2. Pain Catastrophizing Scale score:  
+    - Scores from each of the 13 statements were summed (the maximum score is 52 with a higher scores indicating a greater tendency to catastrophize. PCS scores > 30 indicate a clinically significant level of catastrophizing).  
+
+3. Hopkins Symptom Checklist 25:  
+    - Mean scores for the 10-item anxiety subscale and the 15-item depression subscale items were calculated (mean subscale scores > 1.75 indicate clinically relevant levels of anxiety or depression).
+
+5. Appropriate Pain Behaviours Questionnaire score:  
+    - The Appropriate Pain Behavior Questionnaire (APBQ) was
+used to assess pain beliefs (Nayak et al., 2000). The questionnaire is a 14-item questionnaire that measures beliefs about the appropriateness of expressing pain in the presence of others. There are two components to the APBQ: the APBQ-Male (APBQ-M), which assesses how appropriate individuals find men expressing pain to be and the APBQ-Female (APBQ-F), which assesses how appropriate individuals find women expressing pain to be. 
+
+Eight items on the ABPQ express a positive attitude to pain expression, and 6 express a negative attitude towards expressing pain. The APBQ score was calculated by taking the difference between the mean score of the eight statements that assess whether it is appropriate to express pain behaviors and the mean score of the six statements that assess whether it is inappropriate to express pain behaviors. The final score has a bounded range -6 to +6, with negative values indicating a bias towards pain expression being considered inappropriate and positive values indicating a bias towards pain expression being considered appropriate. We interpreted a score close to zero as indicating an individual had a neutral view of pain expression.  
+
