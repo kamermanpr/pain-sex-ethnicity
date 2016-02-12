@@ -19,73 +19,73 @@ ses_television,"Do you have a television at your primary residence (0: no, 1: ye
 ses_car,"Do you/your parents/guardians own a car (0: no, 1: yes)"
 ses_washing_machine,"Do you have a washing machine at your primary residence (0: no, 1: yes)"
 se_microwave_oven,"Do you have a microwave oven at your primary residence (0: no, 1: yes)"
-cpt_time,
-cpt_vas,
-ppt_kpa,
-ppt_vas,
-hopkins_1_anx_scared,
-hopkins_2_anx_fearful,
-hopkins_3_anx_faintness,
-hopkins_4_anx_nervousness,
-hopkins_5_anx_heart_pounding,
-hopkins_6_anx_trembling,
-hopkins_7_anx_tense,
-hopkins_8_anx_headaches,
-hopkins_9_anx_terror,
-hopkins_10_anx_restlessness,
-hopkins_11_dep_low_energy,
-hopkins_12_dep_self_blame,
-hopkins_13_dep_cry,
-hopkins_14_dep_libido,
-hopkins_15_dep_appetite,
-hopkins_16_dep_sleep,
-hopkins_17_dep_hopelessness,
-hopkins_18_dep_sad,
-hopkins_19_dep_lonely,
-hopkins_20_dep_suicidal,
-hopkins_21_dep_trapped,
-hopkins_22_dep_worrying,
-hopkins_23_dep_disinterest,
-hopkins_24_dep_effort,
-hopkins_25_dep_worthlessness,
-pcs_1,
-pcs_2,
-pcs_3,
-pcs_4,
-pcs_5,
-pcs_6,
-pcs_7,
-pcs_8,
-pcs_9,
-pcs_10,
-pcs_11,
-pcs_12,
-pcs_13,
-abpq_1_f_ok_to_cry,
-abpq_2_f_ok_to_tell_others,
-abpq_3_f_ok_to_frown,
-abpq_4_f_sympathy_towards,
-abpq_5_f_unacceptable_to_tell,
-abpq_6_f_keep_private,
-abpq_7_f_ok_to_groan,
-abpq_8_f_ok_to_ignore,
-abpq_9_f_weakness_to_show_pain,
-abpq_10_f_ok_to_complain,
-abpq_11_f_acceptable_to_complain,
-abpq_12_f_appropriate_to_lie_down,
-abpq_13_f_unacceptable_to_clutch_painful_area,
-abpq_1_f_should_tolerate_pain,
-abpq_1_m_ok_to_cry,
-abpq_2_m_ok_to_tell_others,
-abpq_3_m_ok_to_frown,
-abpq_4_m_sympathy_towards,
-abpq_5_m_unacceptable_to_tell,
-abpq_6_m_keep_private,
-abpq_7_m_ok_to_groan,
-abpq_8_m_ok_to_ignore,
-abpq_9_m_weakness_to_show_pain,
-abpq_10_m_ok_to_complain,
-abpq_11_m_acceptable_to_complain,
-abpq_12_m_appropriate_to_lie_down,
-abpq_13_m_unacceptable_to_clutch_painful_area,
-abpq_1_f_should_tolerate_pain,
+cpt_time,"Cold-pain tolerance: Time (in seconds) participants could retain their dominant hand in iced water (5oC). For safety, a maximum duration of 300s hand immersion was used"
+cpt_vas,"Rating of the intensity of pain when cold-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain every experienced)"
+ppt_kpa,"Pressure-pain tolerance: Pressure (in kPa) applied to the nail bed of the index finger using a pressure algometer with a 10mm^2 probe (Algometer, Somedic AB, Sweden). For safety, a maximum pressure of 1500kPa was used"
+ppt_vas,"Rating of the intensity of pain when pressure-pain tolerance was reached. Rating recorded on a 0-100mm visual analogue pain scale (VAS, anchored at: 0: no pain, and 100: worst pain every experienced)"
+hopkins_1_anx_scared,"Suddenly scared for no reason (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_2_anx_fearful,"Feeling fearful (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_3_anx_faintness,"Faint, dizziness or weakness(1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_4_anx_nervousness,"Nervousness or shaking inside (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_5_anx_heart_pounding,"Heart pounding or racing (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_6_anx_trembling,"Trembling (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_7_anx_tense,"Feeling tense or keyed-up (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_8_anx_headaches,"Headaches (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_9_anx_terror,"Spells of terror or panic (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_10_anx_restlessness,"Feeling restless, cannot sit still (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_11_dep_low_energy,"Feeling low in energy, slowed down (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_12_dep_self_blame,"Blaming yourself for things (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_13_dep_cry,"Crying easily (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_14_dep_libido,"Loss of sexual interest or pleasure (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_15_dep_appetite,"Poor appetite (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_16_dep_sleep,"Difficulty falling asleep, staying asleep (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_17_dep_hopelessness,"Feeling hopeless about the future (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_18_dep_sad,"Feeling blue (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_19_dep_lonely,"Feeling lonely (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_20_dep_suicidal,"Thoughts of ending your life (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_21_dep_trapped,"Feeling of being trapped or caught (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_22_dep_worrying,"Worrying too much about things (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_23_dep_disinterest,"Feeling no interest in things (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_24_dep_effort,"Feeling everything is an effort (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+hopkins_25_dep_worthlessness,"Feeling worthlessness (1: not at all, 2: a little, 3: quite a bit, 4: extremely)"
+pcs_1,"I worry all the time about whether the pain will end (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_2,"I feel I can’t go on (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_3,"It’s terrible and I think it’s never going to get any better (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_4,"It’s awful and I feel that it overwhelms me (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_5,"I feel I can’t stand it anymore (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_6,"I become afraid that the pain will get worse (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_7,"I keep thinking of other painful events (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_8,"I anxiously want the pain to go away (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_9,"I can’t seem to keep it out of my mind (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_10,"I keep thinking about how much it hurts (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_11,"I keep thinking about how badly I want the pain to stop (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_12,"There’s nothing I can do to reduce the intensity of the pain (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+pcs_13,"I wonder whether something serious may happen (0: not at all, 1: to a slight degree, 2: to a moderate degree, 3: to a great degree, 4: all the time)"
+abpq_1_f_ok_to_cry,"It is acceptable for women to cry when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_2_f_ok_to_tell_others,"It is okay for women to communicate their pain to others (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_3_f_ok_to_frown,"It is all right for women to frown when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_4_f_sympathy_towards,"I feel sympathy towards women who are displaying pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_5_f_unacceptable_to_tell,"It is unacceptable for women to tell others about their pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_6_f_keep_private,"I believe women should keep pain private* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_7_f_ok_to_groan,"It is all right for women to groan when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_8_f_ok_to_ignore,"It is appropriate for women to ignore their pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_9_f_weakness_to_show_pain,"I regard it a sign of weakness for women to show pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_10_f_ok_to_complain,"It is okay for women to complain when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_11_f_acceptable_to_complain,"It is acceptable for women to complain when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_12_f_appropriate_to_lie_down,"It is appropriate for women to lie down when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_13_f_unacceptable_to_clutch_painful_area,"It is unacceptable for women to bend over/clutch at the area in pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_1_f_should_tolerate_pain,"Women should be able to tolerate pain in most circumstances* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_1_m_ok_to_cry,"It is acceptable for men to cry when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_2_m_ok_to_tell_others,"It is okay for men to communicate their pain to others (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_3_m_ok_to_frown,"It is all right for men to frown when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_4_m_sympathy_towards,"I feel sympathy towards men who are displaying pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_5_m_unacceptable_to_tell,"It is unacceptable for men to tell others about their pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_6_m_keep_private,"I believe men should keep pain private* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_7_m_ok_to_groan,"It is all right for men to groan when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_8_m_ok_to_ignore,"It is appropriate for men to ignore their pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_9_m_weakness_to_show_pain,"I regard it a sign of weakness for men to show pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_10_m_ok_to_complain,"It is okay for men to complain when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_11_m_acceptable_to_complain,"It is acceptable for men to complain when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_12_m_appropriate_to_lie_down,"It is appropriate for men to lie down when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_13_m_unacceptable_to_clutch_painful_area,"It is unacceptable for men to bend over/clutch at the area in pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
+abpq_1_f_should_tolerate_pain,"men should be able to tolerate pain in most circumstances* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)"
