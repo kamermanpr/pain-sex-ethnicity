@@ -148,12 +148,10 @@ Despite a different cultural and social background from US and European cohorts,
 |apbq_12_m_appropriate_to_lie_down             |It is appropriate for men to lie down when in pain (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)                                                                                                   |
 |apbq_13_m_unacceptable_to_clutch_painful_area* |It is unacceptable for men to bend over/clutch at the area in pain* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)                                                                                  |
 |apbq_14_m_should_tolerate_pain*                 |men should be able to tolerate pain in most circumstances* (Likert-scale anchored at 1: stongly disagree, and 7: stongly agree)                                                                                           |
-cpt: Cold-pain tolerance
-ppt: Pressure-pain tolerance
-ses_X: Socioeconomic status(ses)_item
-hopkins_X_X_: Hopkins Symptom Checklist 25(hopkins)_question number_anxiety/depression subscale_question snippet
-pcs_X: Pain Catastrophizing Scale(pcs)_question number 
-apbq_X_X_X: Appropriate Pain Behaviours Questionnaire(apbq)_question number_male/female version_question snippet  
+- ses_X: Socioeconomic status(ses)_item
+- hopkins_X_X_: Hopkins Symptom Checklist 25(hopkins)_question number_anxiety/depression subscale_question snippet
+- pcs_X: Pain Catastrophizing Scale(pcs)_question number 
+- apbq_X_X_X: Appropriate Pain Behaviours Questionnaire(apbq)_question number_male/female version_question snippet  
 
 **Note:**
 The dataset does not contain any calculated scores. To calculate:  
