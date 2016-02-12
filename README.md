@@ -149,6 +149,7 @@ Despite a different cultural and social background from US and European cohorts,
 
 **Note:**
 The dataset does not contain any calculated scores. To calculate:  
+
 1. Socio-economic assest score:  
     - Based on ownership of culturally relevant assets     (refrigerator, televison, car, washing machine, microwave oven). Because the cohort consisted of full-time students we used parental/guardian ownership of material household items as proxies for participants’ asset ownership. The score was calculated by summing the number of assests 'owned', and dividing by the number of asset questions correctly completed.  
 
@@ -160,7 +161,5 @@ The dataset does not contain any calculated scores. To calculate:
 
 5. Appropriate Pain Behaviours Questionnaire score:  
     - The Appropriate Pain Behavior Questionnaire (APBQ) was
-used to assess pain beliefs (Nayak et al., 2000). The questionnaire is a 14-item questionnaire that measures beliefs about the appropriateness of expressing pain in the presence of others. There are two components to the APBQ: the APBQ-Male (APBQ-M), which assesses how appropriate individuals find men expressing pain to be and the APBQ-Female (APBQ-F), which assesses how appropriate individuals find women expressing pain to be. 
-
-Eight items on the ABPQ express a positive attitude to pain expression, and 6 express a negative attitude towards expressing pain. The APBQ score was calculated by taking the difference between the mean score of the eight statements that assess whether it is appropriate to express pain behaviors and the mean score of the six statements that assess whether it is inappropriate to express pain behaviors. The final score has a bounded range -6 to +6, with negative values indicating a bias towards pain expression being considered inappropriate and positive values indicating a bias towards pain expression being considered appropriate. We interpreted a score close to zero as indicating an individual had a neutral view of pain expression.  
+used to assess pain beliefs (Nayak et al., 2000). The questionnaire is a 14-item questionnaire that measures beliefs about the appropriateness of expressing pain in the presence of others. There are two components to the APBQ: the APBQ-Male (APBQ-M), which assesses how appropriate individuals find men expressing pain to be and the APBQ-Female (APBQ-F), which assesses how appropriate individuals find women expressing pain to be. Eight items on the ABPQ express a positive attitude to pain expression, and 6 express a negative attitude towards expressing pain. The APBQ score was calculated by taking the difference between the mean score of the eight statements that assess whether it is appropriate to express pain behaviors and the mean score of the six statements that assess whether it is inappropriate to express pain behaviors. The final score has a bounded range -6 to +6, with negative values indicating a bias towards pain expression being considered inappropriate and positive values indicating a bias towards pain expression being considered appropriate. We interpreted a score close to zero as indicating an individual had a neutral view of pain expression.  
 
