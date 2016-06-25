@@ -5,7 +5,7 @@ Random forest analysis: Appropriate Pain Behaviours Questionniare (APBQ)-Male
 
 **First version: January 28, 2016**
 
-**Latest version: January 29, 2016**
+**Latest version: June 25, 2016**
 
 ------------------------------------------------------------------------
 
@@ -18,12 +18,26 @@ library(ggplot2)
 library(scales)
 library(grid)
 library(cowplot)
+```
+
+    ## Warning: package 'cowplot' was built under R version 3.2.5
+
+``` r
 library(readr)
 library(dplyr)
 library(tidyr)
 library(knitr)
-library(party)
+```
 
+    ## Warning: package 'knitr' was built under R version 3.2.5
+
+``` r
+library(party)
+```
+
+    ## Warning: package 'zoo' was built under R version 3.2.5
+
+``` r
 # Palette
 palette = c('#000000', '#FF0000')
 
@@ -44,7 +58,7 @@ Load data
 ---------
 
 ``` r
-data <- read_csv("./data/cart-25-01-2016.csv")
+data <- read_csv("./data/random-forest.csv")
 ```
 
 Quick look
@@ -60,9 +74,9 @@ dim(data)
 names(data)
 ```
 
-    ##  [1] "ID"         "CPT"        "PPT"        "Race"       "Sex"       
-    ##  [6] "Anxiety"    "Depression" "PCS"        "APBQ-F"     "APBQ-M"    
-    ## [11] "Education"  "Assets"
+    ##  [1] "ID"         "CPT"        "PPT"        "ancestry"   "sex"       
+    ##  [6] "anxiety"    "depression" "PCS"        "APBQ-F"     "APBQ-M"    
+    ## [11] "education"  "assets"
 
 ``` r
 head(data)
@@ -70,15 +84,15 @@ head(data)
 
     ## Source: local data frame [6 x 12]
     ## 
-    ##      ID   CPT   PPT  Race   Sex Anxiety Depression   PCS APBQ-F APBQ-M
-    ##   (int) (int) (int) (chr) (chr)   (dbl)      (dbl) (int)  (dbl)  (dbl)
-    ## 1     1   217   874     W     M     1.5       1.00    11     NA    1.8
-    ## 2     2   300  1154     W     M     2.4       1.53    15     NA    3.0
-    ## 3     4    39   741     B     F     2.3       1.60    21    3.6    3.7
-    ## 4     5    53  1100     B     F     2.3       1.40    23    0.9    1.5
-    ## 5     6   300  1100     B     M     1.3       1.27    13    3.7   -3.1
-    ## 6     7   300  1249     W     M     1.4       1.13     3    5.7    3.4
-    ## Variables not shown: Education (int), Assets (dbl)
+    ##      ID   CPT   PPT ancestry   sex anxiety depression   PCS APBQ-F APBQ-M
+    ##   (int) (int) (int)    (chr) (chr)   (dbl)      (dbl) (int)  (dbl)  (dbl)
+    ## 1     1   217   874      Eur     M     1.5       1.00    11     NA    1.8
+    ## 2     2   300  1154      Eur     M     2.4       1.53    15     NA    3.0
+    ## 3     4    39   741      Afr     F     2.3       1.60    21    3.6    3.7
+    ## 4     5    53  1100      Afr     F     2.3       1.40    23    0.9    1.5
+    ## 5     6   300  1100      Afr     M     1.3       1.27    13    3.7   -3.1
+    ## 6     7   300  1249      Eur     M     1.4       1.13     3    5.7    3.4
+    ## Variables not shown: education (int), assets (dbl)
 
 ``` r
 tail(data)
@@ -86,24 +100,25 @@ tail(data)
 
     ## Source: local data frame [6 x 12]
     ## 
-    ##      ID   CPT   PPT  Race   Sex Anxiety Depression   PCS APBQ-F APBQ-M
-    ##   (int) (int) (int) (chr) (chr)   (dbl)      (dbl) (int)  (dbl)  (dbl)
-    ## 1   254   111   664     W     F     1.6       1.80    12    3.5    3.7
-    ## 2   255    15   524     B     F     2.2       2.13    NA    3.1    4.3
-    ## 3   258   300  1126     B     M     1.2       1.20    NA    0.7   -2.0
-    ## 4   259    70  1117     B     F     1.7       2.00     7    5.7    4.5
-    ## 5   260    53   892     B     F     1.4         NA    37    4.1    4.9
-    ## 6   262    41   471     B     M     1.0       1.27    27    3.8   -3.9
-    ## Variables not shown: Education (int), Assets (dbl)
+    ##      ID   CPT   PPT ancestry   sex anxiety depression   PCS APBQ-F APBQ-M
+    ##   (int) (int) (int)    (chr) (chr)   (dbl)      (dbl) (int)  (dbl)  (dbl)
+    ## 1   254   111   664      Eur     F     1.6       1.80    12    3.5    3.7
+    ## 2   255    15   524      Afr     F     2.2       2.13    NA    3.1    4.3
+    ## 3   258   300  1126      Afr     M     1.2       1.20    NA    0.7   -2.0
+    ## 4   259    70  1117      Afr     F     1.7       2.00     7    5.7    4.5
+    ## 5   260    53   892      Afr     F     1.4         NA    37    4.1    4.9
+    ## 6   262    41   471      Afr     M     1.0       1.27    27    3.8   -3.9
+    ## Variables not shown: education (int), assets (dbl)
 
 Process data
 ------------
 
 ``` r
 # Clean data
-data <- data %>% mutate(Race = factor(Race), Sex = factor(Sex), APBQM = `APBQ-M`, 
-    Education = factor(Education, ordered = TRUE)) %>% select(-c(1, 
-    2, 3, 9:10))
+data <- data %>% mutate(Ancestry = factor(ancestry), Sex = factor(sex), 
+    Anxiety = anxiety, Depression = depression, APBQF = `APBQ-F`, 
+    APBQM = `APBQ-M`, Education = factor(education, ordered = TRUE), 
+    Assets = assets) %>% select(-c(1:12, 15:17))
 # Complete X and Y variable dataset
 data_complete <- data[complete.cases(data), ]
 # Length of full dataset (with NAs)
@@ -117,7 +132,19 @@ nrow(data)
 nrow(data_complete)
 ```
 
-    ## [1] 167
+    ## [1] 190
+
+``` r
+glimpse(data_complete)
+```
+
+    ## Observations: 190
+    ## Variables: 5
+    ## $ Ancestry  (fctr) Eur, Eur, Afr, Afr, Afr, Eur, Eur, Eur, Eur, Eur, E...
+    ## $ Sex       (fctr) M, M, F, F, M, M, F, M, M, F, M, M, F, F, F, M, F, ...
+    ## $ APBQM     (dbl) 1.8, 3.0, 3.7, 1.5, -3.1, 3.4, 5.2, 3.7, 5.5, 3.0, 2...
+    ## $ Education (fctr) 2, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3, 2, 3, 3, ...
+    ## $ Assets    (dbl) 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 1.0, 1.0, 1.0, 1.0, 1....
 
 Simple single tree
 ------------------
@@ -128,7 +155,9 @@ plot(tree)
 ```
 
 ![](./figures/apbq-male/single_tree-1.png)
- \#\# Random Forest
+
+Random Forest
+-------------
 
 ``` r
 # Set random seeds (used sampling on first run only) seed_1 <-
@@ -201,15 +230,17 @@ ggplot(data = plot_df, aes(x = Variable, y = Value, colour = Important,
 ```
 
 ![](./figures/apbq-male/plot-1.png)
- \#\# Session information
+
+Session information
+-------------------
 
 ``` r
 sessionInfo()
 ```
 
-    ## R version 3.2.3 (2015-12-10)
+    ## R version 3.2.4 (2016-03-10)
     ## Platform: x86_64-apple-darwin13.4.0 (64-bit)
-    ## Running under: OS X 10.11.3 (El Capitan)
+    ## Running under: OS X 10.11.5 (El Capitan)
     ## 
     ## locale:
     ## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
@@ -220,16 +251,17 @@ sessionInfo()
     ## 
     ## other attached packages:
     ##  [1] party_1.0-25      strucchange_1.5-1 sandwich_2.3-4   
-    ##  [4] zoo_1.7-12        modeltools_0.2-21 mvtnorm_1.0-3    
-    ##  [7] knitr_1.12        tidyr_0.4.0       dplyr_0.4.3      
-    ## [10] readr_0.2.2       cowplot_0.6.0     scales_0.3.0     
-    ## [13] ggplot2_2.0.0    
+    ##  [4] zoo_1.7-13        modeltools_0.2-21 mvtnorm_1.0-5    
+    ##  [7] knitr_1.13        tidyr_0.4.1       dplyr_0.4.3      
+    ## [10] readr_0.2.2       cowplot_0.6.2     scales_0.4.0     
+    ## [13] ggplot2_2.1.0    
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] Rcpp_0.12.3      formatR_1.2.1    plyr_1.8.3       tools_3.2.3     
-    ##  [5] digest_0.6.9     evaluate_0.8     gtable_0.1.2     lattice_0.20-33 
-    ##  [9] DBI_0.3.1        yaml_2.1.13      parallel_3.2.3   coin_1.1-2      
-    ## [13] stringr_1.0.0    R6_2.1.1         survival_2.38-3  rmarkdown_0.9.2 
-    ## [17] multcomp_1.4-2   TH.data_1.0-6    magrittr_1.5     codetools_0.2-14
-    ## [21] htmltools_0.3    splines_3.2.3    assertthat_0.1   colorspace_1.2-6
-    ## [25] labeling_0.3     stringi_1.0-1    lazyeval_0.1.10  munsell_0.4.2
+    ##  [1] Rcpp_0.12.4      formatR_1.4      plyr_1.8.3       tools_3.2.4     
+    ##  [5] digest_0.6.9     evaluate_0.9     gtable_0.2.0     lattice_0.20-33 
+    ##  [9] Matrix_1.2-6     DBI_0.4          yaml_2.1.13      parallel_3.2.4  
+    ## [13] coin_1.1-2       stringr_1.0.0    R6_2.1.2         survival_2.39-3 
+    ## [17] rmarkdown_0.9.6  multcomp_1.4-5   TH.data_1.0-7    magrittr_1.5    
+    ## [21] codetools_0.2-14 htmltools_0.3.5  splines_3.2.4    MASS_7.3-45     
+    ## [25] assertthat_0.1   colorspace_1.2-6 labeling_0.3     stringi_1.0-1   
+    ## [29] lazyeval_0.1.10  munsell_0.4.3
