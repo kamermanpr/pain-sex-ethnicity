@@ -1,7 +1,7 @@
 Key,Notes
 id,Participant identification code.
-race,"Self-identified race (B: Black, W: White)"
-Sex,"Self-identified biological sex (F: Female, M: Male)"
+ancestry,"Self-identified ancestry (Afr: African ancestry, Eur: European ancestry)"
+sex,"Self-identified biological sex (F: Female, M: Male)"
 age,Age in years
 height,Height in metres (m)
 mass,Body mass in kilograms (kg)
