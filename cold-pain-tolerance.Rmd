@@ -165,7 +165,7 @@ x_labs <- c(APBQF = 'APBQ-Female',
             Assets = 'Household assets',
             Anxiety = 'Anxiety',
             Sex = 'Sex',
-            Race = 'Race')
+            Ancestry = 'Ancestry')
 ## Vector of facet labels
 f_labels <- c(Model_1 = 'Model 1\n(trees built: 500, seed: 816)',
               Model_2 = 'Model 2\n(trees built: 2000, seed: 816)',
