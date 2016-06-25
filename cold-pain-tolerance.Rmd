@@ -39,8 +39,7 @@ opts_chunk$set(echo = TRUE,
                fig.width = 11.69,
                fig.height = 8.27,
                dev = c('png', 'pdf'),
-               tidy = TRUE, 
-               tidy.opts = list(width.cutoff = 65))
+               tidy = FALSE)
 ```
 
 ## Load data
@@ -80,8 +79,8 @@ glimpse(data_complete)
 
 ## Simple single tree
 ```{r single_tree, fig.width = 8.27, fig.height = 11.69}
-tree <- ctree(CPT ~ ., data = data_complete)
-plot(tree)
+single_tree <- ctree(CPT ~ ., data = data_complete)
+plot(single_tree)
 ```
 
 ## Random Forest
