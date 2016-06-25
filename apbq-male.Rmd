@@ -39,8 +39,7 @@ opts_chunk$set(echo = TRUE,
                fig.width = 11.69,
                fig.height = 8.27,
                dev = c('png', 'pdf'),
-               tidy = TRUE, 
-               tidy.opts = list(width.cutoff = 65))
+               tidy = FALSE)
 ```
 
 ## Load data
@@ -68,7 +67,7 @@ data <- data %>%
            APBQM = `APBQ-M`,
            Education = factor(education, ordered = TRUE),
            Assets = assets) %>%
-    select(-c(1, 2, 3, 4:7, 9:12))
+    select(-c(1:12, 15:17))
 # Complete X and Y variable dataset
 data_complete <- data[complete.cases(data), ] 
 # Length of full dataset (with NAs)
@@ -80,8 +79,8 @@ glimpse(data_complete)
 
 ## Simple single tree
 ```{r single_tree, fig.width = 8.27, fig.height = 11.69}
-tree <- ctree(APBQM ~ ., data = data_complete)
-plot(tree)
+single_tree <- ctree(APBQM ~ ., data = data_complete)
+plot(single_tree)
 ```
 
 ## Random Forest
