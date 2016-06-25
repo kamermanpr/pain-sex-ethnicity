@@ -60,18 +60,22 @@ tail(data)
 ```{r process_data}
 # Clean data
 data <- data %>%
-    mutate(Race = factor(Race),
-           Sex = factor(Sex),
+    mutate(Ancestry = factor(ancestry),
+           Sex = factor(sex),
+           Anxiety = anxiety,
+           Depression = depression,
            APBQF = `APBQ-F`,
            APBQM = `APBQ-M`,
-           Education = factor(Education, ordered = TRUE)) %>%
-    select(-c(1,3, 9:10))
+           Education = factor(education, ordered = TRUE),
+           Assets = assets) %>%
+    select(-c(1, 3, 4:7, 9:12))
 # Complete X and Y variable dataset
 data_complete <- data[complete.cases(data), ] 
 # Length of full dataset (with NAs)
 nrow(data)
 # Length of complete cases dataset
 nrow(data_complete)
+glimpse(data_complete)
 ```
 
 ## Simple single tree
