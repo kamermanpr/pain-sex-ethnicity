@@ -149,25 +149,23 @@ plot_df <- plot_df %>%
     mutate(Model = factor(Model)) %>%
     group_by(Model) %>%
     arrange(desc(Value)) %>%
-    mutate(Important = Value >= abs(min(Value)))
+    mutate(Important = Value > abs(min(Value)))
 ## Dataframe of variable importance thresholds
 v_importance <- plot_df %>%
     summarise(Threshold = abs(min(Value)))
 ## Vector to order x axis variables
-x_order <- rev(plot_df$Variable[1:7])
+x_order <- rev(plot_df$Variable[1:4])
 ## Vector to label x variables
-x_labs <- c(Depression = 'Depression',
-            Education = 'Education',
-            PCS = 'Catastrophizing',
+x_labs <- c(Education = 'Education',
             Assets = 'Household assets',
-            Anxiety = 'Anxiety',
             Sex = 'Sex',
-            Race = 'Race')
+            Ancestry = 'Ancestry')
 ## Vector of facet labels
 f_labels <- c(Model_1 = 'Model 1\n(trees built: 500, seed: 7534)',
               Model_2 = 'Model 2\n(trees built: 2000, seed: 7534)',
               Model_3 = 'Model 3\n(trees built: 500, seed: 597)',
               Model_4 = 'Model 4\n(trees built: 2000, seed: 597)')
+
 ## Plot
 ggplot(data = plot_df, aes(
                   x = Variable,

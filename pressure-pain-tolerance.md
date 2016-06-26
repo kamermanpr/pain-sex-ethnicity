@@ -5,7 +5,7 @@ Random forest analysis: Pressure-pain tolerance
 
 **First version: January 29, 2016**
 
-**Latest version: June 25, 2016**
+**Latest version: June 26, 2016**
 
 ------------------------------------------------------------------------
 
@@ -236,7 +236,7 @@ plot_df <- plot_df %>%
     mutate(Model = factor(Model)) %>%
     group_by(Model) %>%
     arrange(desc(Value)) %>%
-    mutate(Important = Value >= abs(min(Value)))
+    mutate(Important = Value > abs(min(Value)))
 ## Dataframe of variable importance thresholds
 v_importance <- plot_df %>%
     summarise(Threshold = abs(min(Value)))

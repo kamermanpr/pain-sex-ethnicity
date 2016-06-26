@@ -5,7 +5,7 @@ Random forest analysis: Appropriate Pain Behaviours Questionniare (APBQ)-Male
 
 **First version: January 28, 2016**
 
-**Latest version: June 25, 2016**
+**Latest version: June 26, 2016**
 
 ------------------------------------------------------------------------
 
@@ -50,15 +50,14 @@ opts_chunk$set(echo = TRUE,
                fig.width = 11.69,
                fig.height = 8.27,
                dev = c('png', 'pdf'),
-               tidy = TRUE, 
-               tidy.opts = list(width.cutoff = 65))
+               tidy = FALSE)
 ```
 
 Load data
 ---------
 
 ``` r
-data <- read_csv("./data/random-forest.csv")
+data <- read_csv('./data/random-forest.csv')
 ```
 
 Quick look
@@ -115,12 +114,18 @@ Process data
 
 ``` r
 # Clean data
-data <- data %>% mutate(Ancestry = factor(ancestry), Sex = factor(sex), 
-    Anxiety = anxiety, Depression = depression, APBQF = `APBQ-F`, 
-    APBQM = `APBQ-M`, Education = factor(education, ordered = TRUE), 
-    Assets = assets) %>% select(-c(1:12, 15:17))
+data <- data %>%
+    mutate(Ancestry = factor(ancestry),
+           Sex = factor(sex),
+           Anxiety = anxiety,
+           Depression = depression,
+           APBQF = `APBQ-F`,
+           APBQM = `APBQ-M`,
+           Education = factor(education, ordered = TRUE),
+           Assets = assets) %>%
+    select(-c(1:12, 15:17))
 # Complete X and Y variable dataset
-data_complete <- data[complete.cases(data), ]
+data_complete <- data[complete.cases(data), ] 
 # Length of full dataset (with NAs)
 nrow(data)
 ```
@@ -150,8 +155,8 @@ Simple single tree
 ------------------
 
 ``` r
-tree <- ctree(APBQM ~ ., data = data_complete)
-plot(tree)
+single_tree <- ctree(APBQM ~ ., data = data_complete)
+plot(single_tree)
 ```
 
 ![](./figures/apbq-male/single_tree-1.png)
@@ -160,31 +165,52 @@ Random Forest
 -------------
 
 ``` r
-# Set random seeds (used sampling on first run only) seed_1 <-
-# sample(1:10000, 1); seed_1 seed_2 <- sample(1:10000, 1); seed_2
+# Set random seeds (used sampling on first run only)
+# seed_1 <- sample(1:10000, 1); seed_1
+# seed_2 <- sample(1:10000, 1); seed_2
 seed_1 <- 7534
 seed_2 <- 597
-# Data controls mtry estimated as sqrt of variables
-data.control_1 <- cforest_unbiased(ntree = 500, mtry = 3)
-data.control_2 <- cforest_unbiased(ntree = 2000, mtry = 3)
+# Data controls
+## mtry estimated as sqrt of variables 
+data.control_1 <- cforest_unbiased(ntree = 500, mtry = 3) 
+data.control_2 <- cforest_unbiased(ntree = 2000, mtry = 3) 
 # Model 1
+#########
 set.seed(seed_1)
-# ntree = 500, mtry = 3, seed = seed_1 Modelling
-model_1 <- cforest(APBQM ~ ., data = data_complete, controls = data.control_1)
+# ntree = 500, mtry = 3, seed = seed_1
+# Modelling 
+model_1 <- cforest(APBQM ~ .,
+                    data = data_complete,
+                    controls = data.control_1) 
 model_1_varimp <- varimp(model_1, conditional = TRUE)
 
-# Model 2 ntree = 2000, mtry = 3, seed = seed_1 Modelling
-model_2 <- cforest(APBQM ~ ., data = data_complete, controls = data.control_2)
+# Model 2
+#########
+# ntree = 2000, mtry = 3, seed = seed_1
+# Modelling 
+model_2 <- cforest(APBQM ~ .,
+                    data = data_complete,
+                    controls = data.control_2) 
 model_2_varimp <- varimp(model_2, conditional = TRUE)
 
-# Model 3 Set seed
+# Model 3
+#########
+# Set seed
 set.seed(seed_2)
-# ntree = 500, mtry = 3, seed = seed_2 Modelling
-model_3 <- cforest(APBQM ~ ., data = data_complete, controls = data.control_1)
+# ntree = 500, mtry = 3, seed = seed_2
+# Modelling 
+model_3 <- cforest(APBQM ~ .,
+                    data = data_complete,
+                    controls = data.control_1) 
 model_3_varimp <- varimp(model_3, conditional = TRUE)
 
-# Model 4 ntree = 2000, mtry = 3, seed = seed_2 Modelling
-model_4 <- cforest(APBQM ~ ., data = data_complete, controls = data.control_2)
+# Model 4
+#########
+# ntree = 2000, mtry = 3, seed = seed_2
+# Modelling 
+model_4 <- cforest(APBQM ~ .,
+                    data = data_complete,
+                    controls = data.control_2) 
 model_4_varimp <- varimp(model_4, conditional = TRUE)
 ```
 
@@ -193,40 +219,64 @@ Plots
 
 ``` r
 ## Generate plot dataframe
-plot_list <- list(model_1_varimp, model_2_varimp, model_3_varimp, 
-    model_4_varimp)
-plot_list <- lapply(plot_list, function(x) data.frame(Variable = names(x), 
-    Importance = x, row.names = NULL))
+plot_list <- list(model_1_varimp, model_2_varimp, 
+                  model_3_varimp, model_4_varimp)
+plot_list <- lapply(plot_list, function(x)
+    data.frame(Variable = names(x), Importance = x, row.names = NULL))
 plot_df <- tbl_df(do.call(cbind, plot_list))
-plot_df <- plot_df[, c(1, 2, 4, 6, 8)]
-names(plot_df) <- c("Variable", "Model_1", "Model_2", "Model_3", "Model_4")
-plot_df <- plot_df %>% gather(Model, Value, -Variable) %>% mutate(Model = factor(Model)) %>% 
-    group_by(Model) %>% arrange(desc(Value)) %>% mutate(Important = Value >= 
-    abs(min(Value)))
+plot_df <- plot_df[ , c(1, 2, 4, 6, 8)]
+names(plot_df) <- c('Variable', 'Model_1', 'Model_2', 'Model_3', 'Model_4')
+plot_df <- plot_df %>%
+    gather(Model, Value, -Variable) %>%
+    mutate(Model = factor(Model)) %>%
+    group_by(Model) %>%
+    arrange(desc(Value)) %>%
+    mutate(Important = Value > abs(min(Value)))
 ## Dataframe of variable importance thresholds
-v_importance <- plot_df %>% summarise(Threshold = abs(min(Value)))
+v_importance <- plot_df %>%
+    summarise(Threshold = abs(min(Value)))
 ## Vector to order x axis variables
-x_order <- rev(plot_df$Variable[1:7])
+x_order <- rev(plot_df$Variable[1:4])
 ## Vector to label x variables
-x_labs <- c(Depression = "Depression", Education = "Education", PCS = "Catastrophizing", 
-    Assets = "Household assets", Anxiety = "Anxiety", Sex = "Sex", 
-    Race = "Race")
+x_labs <- c(Education = 'Education',
+            Assets = 'Household assets',
+            Sex = 'Sex',
+            Ancestry = 'Ancestry')
 ## Vector of facet labels
-f_labels <- c(Model_1 = "Model 1\n(trees built: 500, seed: 7534)", 
-    Model_2 = "Model 2\n(trees built: 2000, seed: 7534)", Model_3 = "Model 3\n(trees built: 500, seed: 597)", 
-    Model_4 = "Model 4\n(trees built: 2000, seed: 597)")
+f_labels <- c(Model_1 = 'Model 1\n(trees built: 500, seed: 7534)',
+              Model_2 = 'Model 2\n(trees built: 2000, seed: 7534)',
+              Model_3 = 'Model 3\n(trees built: 500, seed: 597)',
+              Model_4 = 'Model 4\n(trees built: 2000, seed: 597)')
+
 ## Plot
-ggplot(data = plot_df, aes(x = Variable, y = Value, colour = Important, 
-    fill = Important)) + geom_point(size = 4, shape = 21) + geom_hline(data = v_importance, 
-    aes(yintercept = Threshold), linetype = "dashed", size = 0.8) + 
-    facet_wrap(~Model, labeller = labeller(Model = f_labels)) + labs(y = "Variable importance (arbitrary units)\n") + 
-    scale_x_discrete(labels = x_labs, limits = x_order) + scale_colour_manual(values = palette) + 
-    scale_fill_manual(values = palette) + theme(legend.position = "none", 
-    plot.margin = unit(c(1, 3, 1, 3), "lines"), panel.margin.x = unit(2, 
-        "lines"), axis.title = element_text(size = 18), axis.title.x = element_blank(), 
-    axis.text = element_text(size = 18), axis.text.x = element_text(angle = 30, 
-        hjust = 1), axis.line = element_line(size = 0.9), axis.ticks = element_line(size = 0.9), 
-    strip.text = element_text(size = 14))
+ggplot(data = plot_df, aes(
+                  x = Variable,
+                  y = Value,
+                  colour = Important,
+                  fill = Important)) +
+    geom_point(size = 4, 
+               shape = 21) +
+    geom_hline(data = v_importance, 
+               aes(yintercept = Threshold), 
+               linetype = 'dashed',
+               size = 0.8) +
+    facet_wrap(~ Model, 
+               labeller = labeller(Model = f_labels)) +
+    labs(y = 'Variable importance (arbitrary units)\n') +
+    scale_x_discrete(labels = x_labs,
+                     limits = x_order) +
+    scale_colour_manual(values = palette) +
+    scale_fill_manual(values = palette) +
+    theme(legend.position = 'none',
+          plot.margin = unit(c(1, 3, 1, 3), 'lines'),
+          panel.margin.x = unit(2, 'lines'),
+          axis.title = element_text(size = 18),
+          axis.title.x = element_blank(),
+          axis.text = element_text(size = 18),
+          axis.text.x = element_text(angle = 30, hjust = 1),
+          axis.line = element_line(size = 0.9),
+          axis.ticks = element_line(size = 0.9),
+          strip.text = element_text(size = 14))
 ```
 
 ![](./figures/apbq-male/plot-1.png)
