@@ -1,0 +1,98 @@
+---
+output: 
+    md_document:
+        variant: markdown_github
+---
+
+# Bland-Altman Limits of Agreement analysis of PCS trait and state values
+
+### Peter Kamerman
+
+**First version: September 5, 2016**  
+
+**Latest version: `r format(Sys.time(), "%B %d, %Y")`**
+
+***
+
+## Session setup
+```{r session_setup, message = FALSE, warning = FALSE}
+# Load packages
+library(BlandAltmanLeh)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(tidyr)
+
+# knitr chunk options
+knitr::opts_chunk$set(echo = TRUE,
+               warning = FALSE,
+               message = FALSE,
+               cache = TRUE,
+               fig.path = './figures/bland-altman/',
+               fig.align = 'center', 
+               dev = c('png', 'pdf'),
+               tidy = FALSE)
+```
+
+## Load data
+```{r import_data}
+data <- read_csv('./data/random-forest-2.csv')
+```
+
+## Quick look
+```{r quick_look}
+dim(data)
+names(data)
+head(data)
+tail(data)
+```
+
+## Clean data
+```{r clean}
+# Select PCS columns
+data <- data %>%
+    select(ID, PCS_trait, PCS_state)
+```
+
+## Data analysis
+## Descriptive data
+```{r descriptive}
+# Plot
+data_long <- data %>%
+    gather(key = key, value = score, -ID)
+
+ggplot(data = data_long,
+       aes(x = key, y = score)) +
+    geom_boxplot() +
+    geom_jitter(shape = 21) 
+
+# 5-item summary
+summary(data[ , 2:3])
+
+```
+
+### Bland Altman Limits of Agreement
+```{r bland_altman}
+# Bland Altman plot
+with(data, 
+     bland.altman.plot(group1 = PCS_trait, group2 = PCS_state,
+                       graph.sys = 'ggplot2'))
+# Bland Altman stats
+with(data, 
+     bland.altman.stats(group1 = PCS_trait, group2 = PCS_state))
+
+
+```
+
+### Linear regression
+```{r ols}
+# Plot
+ggplot(data = data,
+       aes(x = PCS_state, y = PCS_trait)) +
+    geom_point() +
+    geom_smooth(method = 'lm')
+
+
+with(data,
+     cor.test(PCS_trait, PCS_state, method = 'pearson'))
+```
