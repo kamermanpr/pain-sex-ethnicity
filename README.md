@@ -14,20 +14,17 @@ The repository also includes the [data](/data/bivariate-data.csv) and [codebook]
 ## Repository contents
 
 ## Overview of the study
-### Background
-Sex and ethnicity influence pain sensitivity and pain beliefs. However, studies on relationships between sex, ethnicity and pain largely have emanated from the US and Europe. 
-
-### Objectives
-To determine effects of sex and ethnicity on pain sensitivity and beliefs we compared cold and pressure pain tolerance in South African male and female individuals of African ancestry and European ancestry. We also assessed whether psychosocial factors (including pain beliefs) predicted sex and ethnic differences in pain sensitivity and beliefs.
-
-### Methods 
-We recruited 106 individuals of African ancestry (62 female, 44 male) and 106 individuals of European ancestry (55 female, 51 male). Participants underwent a cold-pressor test and pressure algometry to determine tolerance to noxious thermal and mechanical stimuli. Socioeconomic status, pain catastrophizing, depression, anxiety and pain beliefs were assessed as predictors of differences in pain tolerance. 
-
+###Background
+Studies on relationships between sex, ethnicity and pain largely have emanated from the US and Europe. We compared cold (CPT) and pressure pain tolerance (PPT) in male and female South Africans of African and European ancestry and assessed whether psychosocial factors (including pain beliefs) predicted differences in pain tolerance.
+ 
+### Methods
+We recruited 106 (62 female) students of African ancestry and 106 (55 female) of European ancestry and subjected them to a cold-pressor test and pressure algometry. Socioeconomic status (SES), pain catastrophizing, depression, anxiety and pain beliefs were assessed as predictors of pain tolerance.
+ 
 ### Results
-Cold pain tolerance was lower in individuals of African ancestry than in individuals of European ancestry (for both sexes), and pressure pain tolerance was lower in female than male students (for both ethnicities). Pain intensity at tolerance was similar for all groups in both tests. Men were less accepting of men expressing pain than were women, with males of African ancestry being the least accepting. Regression tree analysis identified that being of African ancestry, and particularly being a female of African ancestry predicted lower cold pain tolerance. Anxiety and ownership of assets (as a measure of socioeconomic status) were identified as additional variables of interest for predicting cold pain tolerance on random forest analysis but the associations were borderline. Both regression tree and random forest analysis identified female sex as the only significant predictor of pressure-pain tolerance, with females having lower pressure-pain tolerance than men. Regression tree analysis identified sex and ethnicity as important predictors of APBQ-M score, such that being female predicted greater APBQ-M scores, and amongst males, being of African ancestry predicted significantly lower APBQ-M scores than did being of European ancestry. Random forest also identified depression and ownership of assets as variables of interest.
-
+CPT was lower in students of African compared to European ancestry (for both sexes), and PPT was lower in female than male students (for both ethnicities). Females were very  accepting of men expressing pain and males less so.  Males of African ancestry were least accepting but still tolerant. Multivariate analysis identified African ancestry, and particularly being a female of African ancestry as strong predictors of lower CPT. Anxiety was a weak predict of CPT. Sex was the only strong predictor of PPT on multivariate analysis (PPT females < males) and catastrophizing was a weak predictor . Female sex and African ancestry were strong predictors of acceptance of expression of pain in males. SES was a weak predictor of APBQ-M.
+ 
 ### Conclusions
-Despite a different cultural and social background from US and European cohorts, we saw similar patterns of sex and ethnic differences in tolerance to cold and pressure stimuli in an African cohort. Traditional psychosocial predictors of pain sensitivity were identified as being of interest but were not strongly associated. 
+Despite a different cultural and social background from US and European cohorts, we saw similar patterns of sex and ethnic differences in CPT and PPT in an African cohort. Traditional psychosocial predictors of pain sensitivity predicted variation in the outcome variables but were not strong predictors.
 
 ## Codebook
 
