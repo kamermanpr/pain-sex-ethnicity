@@ -6,10 +6,11 @@ The primary content of this repository includes the [data](/data/random-forest.c
 The repository also includes the [data](/data/bivariate-data.csv) and [codebook](/data/codebook-bivariate-data.csv) used in all bivariate analyses. These analyses were completed using GraphPad Prism 6.0, and the results have not been uploaded to the repository (please contact [antonia.wadley@wits.ac.za](mailto:antonia.wadley@wits.ac.za) or [peter.kamerman@wits.ac.za](mailto:peter.kamerman@wits.ac.za) for more information).
 
 ## Bibliographic information
-[To be added when published]
+Bagwath Persad LA, Kamerman PR, Wadley AL. Predictors of cold and pressure pain tolerance in healthy South African adults. Pain Med _[Epub - ahead of print]_, 2017. DOI: [10.1093/pm/pnw291](http://dx.doi.org/10.1093/pm/pnw291).
 
 ## License
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The 'pain-sex-ethnicity' respository</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/kamermanpr/pain-sex-ethnicity.git" property="cc:attributionName" rel="cc:attributionURL">Peter Kamerman and Antonia Wadley</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+**MIT License**  
+Copyright: Peter Kamerman (2016)
 
 ## Repository contents
 
